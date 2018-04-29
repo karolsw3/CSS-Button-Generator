@@ -20,7 +20,7 @@ var ButtonGenerator = function () {
         padding: this._randomInt(12, 19) + 'px ' + this._randomInt(17, 45) + 'px',
         borderRadius: this._randomInt(2, 20) + 'px',
         color: 'white',
-        textShadow: '0 0 ' + this._randomInt(16, 22) + 'px rgba(0, 0, 0, .38)'
+        textShadow: '0 0 ' + this._randomInt(16, 22) + 'px rgba(0, 0, 0, .42)'
       };
     }
   }, {
@@ -31,7 +31,21 @@ var ButtonGenerator = function () {
         background: 'linear-gradient(' + this._randomColor(30) + ', ' + this._randomColor(60) + ')',
         padding: this._randomInt(12, 19) + 'px ' + this._randomInt(17, 45) + 'px',
         borderRadius: this._randomInt(5, 35) + 'px',
-        color: 'white'
+        color: 'white',
+        textShadow: '0 0 ' + this._randomInt(16, 22) + 'px rgba(0, 0, 0, .42)'
+      };
+    }
+  }, {
+    key: 'generateRetroButtonStyle',
+    value: function generateRetroButtonStyle() {
+      this.buttonStyle = {
+        border: '1px solid black',
+        background: 'linear-gradient(' + this._randomColor(30) + ', ' + this._randomColor(0) + ')',
+        padding: this._randomInt(6, 9) + 'px ' + this._randomInt(7, 23) + 'px',
+        borderRadius: this._randomInt(6, 12) + 'px',
+        color: 'black',
+        textShadow: '0 0 ' + this._randomInt(16, 22) + 'px rgba(0, 0, 0, .68)',
+        boxShadow: '0 0 ' + this._randomInt(6, 12) + 'px rgba(0, 0, 0, .38)'
       };
     }
   }, {

@@ -1,5 +1,6 @@
 let classicButton = document.getElementById('classicButton')
 let gradientButton = document.getElementById('gradientButton')
+let retroButton = document.getElementById('retroButton')
 let generator = new ButtonGenerator()
 
 classicButton.onclick = () => {
@@ -12,3 +13,7 @@ gradientButton.onclick = () => {
   generator.applyStyleOnButton(gradientButton)
 }
 
+retroButton.onclick = () => {
+  generator.generateRetroButtonStyle()
+  generator.applyStyleOnButton(retroButton)
+}
