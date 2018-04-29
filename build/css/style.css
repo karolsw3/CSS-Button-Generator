@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
 html,
 body {
   margin: 0;
@@ -6,13 +7,33 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Roboto', sans-serif;
 }
 button {
   margin: 10px;
   font-size: 15px;
   cursor: pointer;
   transition-duration: 0.2s;
+  font-family: 'Roboto', sans-serif;
 }
 button:hover {
   opacity: 0.82;
+}
+.info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 40px;
+  color: rgba(0,0,0,0.185);
+  font-weight: 700;
+  padding: 50px 0;
+  user-select: none;
+  -moz-user-select: none;
+}
+.info__footer {
+  top: auto;
+  bottom: 0;
+  font-size: 20px;
 }
