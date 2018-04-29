@@ -37,6 +37,18 @@ class ButtonGenerator {
     }
   }
 
+  generateClearButtonStyle () {
+    let borderColor = `${this._randomColor(5)}`
+    this.buttonStyle = {
+      border: `2px solid ${borderColor}`,
+      background: `transparent`,
+      padding: `${this._randomInt(12, 19)}px ${this._randomInt(17, 45)}px`,
+      borderRadius: `${this._randomInt(2, 20)}px`,
+      color: borderColor,
+      textShadow: `0 0 ${this._randomInt(18, 27)}px rgba(0, 0, 0, .32)`
+    }
+  }
+
   applyStyleOnButton (button) {
     Object.assign(button.style, this.buttonStyle)
   }
