@@ -24,3 +24,15 @@ clearButton.onclick = () => {
   generator.applyStyleOnButton(clearButton)
 }
 
+generator.generateClassicButtonStyle()
+generator.applyStyleOnButton(classicButton)
+
+generator.generateGradientButtonStyle()
+generator.applyStyleOnButton(gradientButton)
+
+generator.generateRetroButtonStyle()
+generator.applyStyleOnButton(retroButton)
+
+generator.generateClearButtonStyle()
+generator.applyStyleOnButton(clearButton)
+
