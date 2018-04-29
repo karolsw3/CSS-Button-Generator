@@ -12,10 +12,26 @@ var ButtonGenerator = function () {
   }
 
   _createClass(ButtonGenerator, [{
-    key: 'generateButtonStyle',
-    value: function generateButtonStyle() {
+    key: 'generateClassicButtonStyle',
+    value: function generateClassicButtonStyle() {
       this.buttonStyle = {
-        border: this._randomInt(0, 3) + 'px ' + (this._chances(80) ? 'solid' : 'dashed') + ' ' + this._randomColor()
+        border: 'none',
+        backgroundColor: '' + this._randomColor(50),
+        padding: this._randomInt(12, 19) + 'px ' + this._randomInt(17, 45) + 'px',
+        borderRadius: this._randomInt(2, 20) + 'px',
+        color: 'white',
+        textShadow: '0 0 ' + this._randomInt(16, 22) + 'px rgba(0, 0, 0, .38)'
+      };
+    }
+  }, {
+    key: 'generateGradientButtonStyle',
+    value: function generateGradientButtonStyle() {
+      this.buttonStyle = {
+        border: 'none',
+        background: 'linear-gradient(' + this._randomColor(30) + ', ' + this._randomColor(60) + ')',
+        padding: this._randomInt(12, 19) + 'px ' + this._randomInt(17, 45) + 'px',
+        borderRadius: this._randomInt(5, 35) + 'px',
+        color: 'white'
       };
     }
   }, {
@@ -25,12 +41,22 @@ var ButtonGenerator = function () {
     }
   }, {
     key: '_randomColor',
-    value: function _randomColor() {
-      var red = this._randomInt(0, 255);
-      var green = this._randomInt(0, 255);
-      var blue = this._randomInt(0, 255);
+    value: function _randomColor(brightnessPercentage) {
+      var brightness = Math.round(brightnessPercentage * (255 / 100));
+      var red = this._randomInt(brightness, 255);
+      var green = this._randomInt(brightness, 255);
+      var blue = this._randomInt(brightness, 255);
 
       return 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+    }
+  }, {
+    key: '_getTextColorBasedOnBackground',
+    value: function _getTextColorBasedOnBackground(bgColor) {
+      var red = bgColor.r * 255;
+      var green = bgColor.g * 255;
+      var blue = bgColor.b * 255;
+      var yiq = (red * 299 + green * 587 + blue * 114) / 1000;
+      return yiq >= 128 ? 'black' : 'white';
     }
   }, {
     key: '_randomInt',

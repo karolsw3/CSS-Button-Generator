@@ -1,9 +1,15 @@
 'use strict';
 
-var button = document.getElementById('button');
+var classicButton = document.getElementById('classicButton');
+var gradientButton = document.getElementById('gradientButton');
 var generator = new ButtonGenerator();
 
-button.onclick = function () {
-  generator.generateButtonStyle();
-  generator.applyStyleOnButton(button);
+classicButton.onclick = function () {
+  generator.generateClassicButtonStyle();
+  generator.applyStyleOnButton(classicButton);
+};
+
+gradientButton.onclick = function () {
+  generator.generateGradientButtonStyle();
+  generator.applyStyleOnButton(gradientButton);
 };
